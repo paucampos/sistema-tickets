@@ -4,14 +4,14 @@ import { DetalleSolicitudComponent } from './pages/detalle-solicitud/detalle-sol
 import { LoginComponent } from './pages/login/login.component';
 import { AsignarTicketComponent } from './pages/asignar-ticket/asignar-ticket.component';
 import { CerrarTicketComponent } from './pages/cerrar-ticket/cerrar-ticket.component';
-import { gerenteGuard, soporteGuard } from './guards/auth.guard';
+import { authGuard, gerenteGuard, soporteGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
-  { path: 'solicitudes', component: VerSolicitudesComponent },
-  { path: 'detalle/:id', component: DetalleSolicitudComponent },
-  { path: 'asignar/:id', component: AsignarTicketComponent, canMatch: [gerenteGuard] },
-  { path: 'cerrar/:id', component: CerrarTicketComponent, canMatch: [soporteGuard] },
+  { path: 'solicitudes', component: VerSolicitudesComponent, canMatch: [authGuard] },
+  { path: 'detalle/:id', component: DetalleSolicitudComponent, canMatch: [authGuard] },
+  { path: 'asignar/:id', component: AsignarTicketComponent, canMatch: [authGuard, gerenteGuard] },
+  { path: 'cerrar/:id', component: CerrarTicketComponent, canMatch: [authGuard, soporteGuard] },
   { path: '**', redirectTo: '/login' }
 ];
