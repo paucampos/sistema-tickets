@@ -1,0 +1,54 @@
+<div class="container mt-4" *ngIf="ticket">
+  <!-- Bloque similar al detalle del ticket -->
+  <app-ticket-detalle [ticket]="ticket" [usuarioCreador]="usuarioCreador!" />
+
+
+  <!-- Bloque exclusivo para gerente: asignar ticket -->
+  @if (auth.usuarioActual?.rol === 'gerente') {
+    <div class="card border-warning">
+      <div class="card-header bg-warning text-dark fw-bold text-uppercase">
+        Asignar Ticket
+      </div>
+      <div class="card-body">
+        <div class="mb-3">
+          <label class="form-label">Personal asignado</label>
+          <select class="form-select" [(ngModel)]="trabajadorSeleccionado">
+            <option [ngValue]="null">-- Selecciona un trabajador --</option>
+            @for (trabajador of trabajadoresDisponibles; track trabajador.id) {
+              <option [ngValue]="trabajador">
+                {{ trabajador.nombre }} ({{ trabajador.ticketsAsignados }} asignados)
+              </option>
+            }
+          </select>
+        </div>
+
+        <button class="btn btn-primary me-2" (click)="asignar()" [disabled]="!trabajadorSeleccionado">
+          Asignar
+        </button>
+        <button class="btn btn-secondary" (click)="cancelar()">
+          Cancelar
+        </button>
+      </div>
+    </div>
+  }
+</div>
+
+<!-- MODAL DE CONFIRMACIÓN -->
+<div #modalConfirmacion class="modal fade" id="modalConfirmacion" tabindex="-1" aria-labelledby="modalConfirmacionLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content border-success">
+      <div class="modal-header bg-success text-white">
+        <h5 class="modal-title" id="modalConfirmacionLabel">Listo</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        Asignación realizada
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" (click)="confirmarRedireccion()" data-bs-dismiss="modal">
+          OK
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,53 @@
+<div class="container mt-4">
+  <div class="card border-warning">
+    <div class="card-header bg-warning text-dark fw-bold">
+      {{ authService.usuarioActual?.rol === 'gerente' ? 'Asignar Solicitudes' : 'Mis Solicitudes' }}
+    </div>
+
+    <div class="card-body p-0">
+      <table class="table table-bordered table-hover mb-0">
+        <thead class="table-warning text-dark">
+          <tr>
+            <th>ID</th>
+            <th>Sector</th>
+            <th>Fecha Solicitud</th>
+            <th *ngIf="authService.usuarioActual?.rol === 'gerente'">Asignar</th>
+            <th *ngIf="authService.usuarioActual?.rol === 'cliente'">Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (ticket of ticketsFiltrados; track ticket.id) {
+            <tr>
+              <td>
+                @if (authService.usuarioActual?.rol === 'cliente' || authService.usuarioActual?.rol === 'gerente') {
+                  <a [routerLink]="['/detalle', ticket.id]">{{ ticket.id }}</a>
+                }
+                @if (authService.usuarioActual?.rol === 'soporte') {
+                  <a [routerLink]="['/cerrar', ticket.id]">{{ ticket.id }}</a>
+                }
+              </td>
+              <td>{{ ticket.sector }}</td>
+              <td>{{ ticket.fechaSolicitud }}</td>
+
+              @if (authService.usuarioActual?.rol === 'gerente') {
+                <td>
+                  <a class="btn btn-sm btn-primary" [routerLink]="['/asignar', ticket.id]">
+                    Asignar
+                  </a>
+                </td>
+              }
+
+              @if (authService.usuarioActual?.rol === 'cliente') {
+                <td>{{ ticket.estado }}</td>
+              }
+            </tr>
+          } @empty {
+            <tr>
+              <td colspan="4" class="text-center">No hay tickets para mostrar.</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

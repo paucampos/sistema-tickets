@@ -1,0 +1,59 @@
+[
+  {
+    "id": 100001,
+    "titulo": "No puedo acceder al sistema",
+    "descripcion": "Intento ingresar pero me saca al inicio.",
+    "sector": "TI",
+    "fechaSolicitud": "2024-06-01",
+    "fechaResolucion": "2024-06-03",
+    "estado": "cerrado",
+    "prioridad": "alta",
+    "usuarioId": 1001,
+    "trabajadorId": 2001,
+    "resolucion": "Se actualizó la contraseña del usuario y se reactivó el acceso al sistema correctamente."
+  },
+  {
+    "id": 100002,
+    "titulo": "Problema con impresora",
+    "descripcion": "No imprime en red.",
+    "sector": "Soporte",
+    "fechaSolicitud": "2024-06-10",
+    "estado": "pendiente",
+    "prioridad": "media",
+    "usuarioId": 1001,
+    "trabajadorId": 2002
+  },
+  {
+    "id": 100003,
+    "titulo": "Correo institucional no llega",
+    "descripcion": "No estoy recibiendo correos desde ayer.",
+    "sector": "TI",
+    "fechaSolicitud": "2024-06-15",
+    "estado": "ingresado",
+    "prioridad": "alta",
+    "usuarioId": 1001
+  },
+  {
+    "id": 100004,
+    "titulo": "Error en la planilla de sueldos",
+    "descripcion": "Los montos están desactualizados.",
+    "sector": "RRHH",
+    "fechaSolicitud": "2024-06-16",
+    "estado": "ingresado",
+    "prioridad": "baja",
+    "usuarioId": 1002
+  },
+  {
+    "id": 100005,
+    "titulo": "No tengo acceso a SAP",
+    "descripcion": "Mi usuario fue bloqueado.",
+    "sector": "Contabilidad",
+    "fechaSolicitud": "2024-06-18",
+    "fechaResolucion": "2024-06-21",
+    "estado": "cerrado",
+    "prioridad": "alta",
+    "usuarioId": 1001,
+    "trabajadorId": 2002,
+    "resolucion": "Se solicitó al área de infraestructura el desbloqueo de la cuenta SAP. El acceso fue restablecido correctamente."
+  }
+]

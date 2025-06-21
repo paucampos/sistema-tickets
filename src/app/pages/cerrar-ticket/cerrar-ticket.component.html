@@ -1,0 +1,35 @@
+<div class="container mt-4" *ngIf="ticket && usuarioCreador">
+  <!-- Detalle del ticket -->
+  <app-ticket-detalle [ticket]="ticket" [usuarioCreador]="usuarioCreador" />
+
+  <!-- Bloque para resolución del trabajador -->
+  <div class="card border-warning">
+    <div class="card-header bg-warning text-dark fw-bold text-uppercase">
+      Resolución de Solicitud
+    </div>
+    <div class="card-body">
+      <p><strong>Personal asignado:</strong> {{ auth.usuarioActual?.nombre }}</p>
+      <p><strong>Fecha solicitud:</strong> {{ ticket.fechaSolicitud }}</p>
+
+      <div class="mb-3">
+        <label class="form-label"><strong>Resolución</strong> (máx. 500 caracteres):</label>
+        <textarea
+          class="form-control"
+          [(ngModel)]="resolucionTexto"
+          rows="4"
+          maxlength="500"
+        ></textarea>
+        <div class="text-muted text-end">
+          {{ resolucionTexto.length }} / 500
+        </div>
+      </div>
+
+      @if (error) {
+        <div class="alert alert-danger">{{ error }}</div>
+      }
+
+      <button class="btn btn-primary me-2" (click)="cerrarTicket()">Cerrar ticket</button>
+      <button class="btn btn-secondary" (click)="cancelar()">Cancelar</button>
+    </div>
+  </div>
+</div>

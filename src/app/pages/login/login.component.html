@@ -1,0 +1,21 @@
+<div class="container mt-5">
+  <h2>Simulación de Login</h2>
+
+  <div class="mb-3">
+    <label class="form-label">Selecciona tu usuario</label>
+    <select class="form-select" [(ngModel)]="nombreSeleccionado">
+      <option [ngValue]="''">-- Elegir --</option>
+      @for (user of usuarios; track user.id) {
+        <option [ngValue]="user.nombre">
+          {{ user.nombre }} ({{ user.rol }})
+        </option>
+      }
+    </select>
+  </div>
+
+  @if (error) {
+    <div class="alert alert-danger">{{ error }}</div>
+  }
+
+  <button class="btn btn-primary" (click)="login()">Entrar</button>
+</div>

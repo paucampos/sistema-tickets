@@ -1,0 +1,26 @@
+[
+  {
+    "id": 2001,
+    "nombre": "Pablo Silva",
+    "correo": "pablo.silva@empresa.com",
+    "telefono": "+56 9 9999 9999",
+    "rol": "soporte",
+    "ticketsAsignados": 3
+  },
+  {
+    "id": 2002,
+    "nombre": "Andrea Soto",
+    "correo": "andrea.soto@empresa.com",
+    "telefono": "+56 9 8888 8888",
+    "rol": "soporte",
+    "ticketsAsignados": 5
+  },
+  {
+    "id": 2003,
+    "nombre": "Alejandro Celis",
+    "correo": "alejandro@empresa.com",
+    "telefono": "+56 9 8888 7777",
+    "rol": "soporte",
+    "ticketsAsignados": 19
+  }
+]

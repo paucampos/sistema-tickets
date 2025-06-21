@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1001,
+    "nombre": "María López",
+    "correo": "maria@correo.com",
+    "telefono": "+56 9 1234 5678",
+    "rol": "cliente"
+  },
+  {
+    "id": 1002,
+    "nombre": "José Ramírez",
+    "correo": "jose@correo.com",
+    "telefono": "+56 9 8765 4321",
+    "rol": "cliente"
+  },
+  {
+    "id": 2001,
+    "nombre": "Carlos Díaz",
+    "correo": "carlos@soporte.com",
+    "rol": "soporte",
+    "ticketsAsignados": 4
+  },
+  {
+    "id": 3001,
+    "nombre": "Roberto Marquez Jara",
+    "correo": "roberto@empresa.com",
+    "rol": "gerente"
+  }
+]
