@@ -3,7 +3,7 @@
 
   <div class="d-flex align-items-center gap-3">
     <a routerLink="/inicio" class="text-dark text-decoration-none">Inicio</a>
-    <a routerLink="/solicitudes" class="text-dark text-decoration-none">Tickets</a>
+    <a id="tickets" routerLink="/solicitudes" class="text-dark text-decoration-none">Tickets</a>
 
     <span class="text-dark fw-semibold me-3" *ngIf="auth.usuarioActual">
       Bienvenido, {{ auth.usuarioActual.nombre }}

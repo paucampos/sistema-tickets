@@ -55,5 +55,16 @@
     "usuarioId": 1001,
     "trabajadorId": 2002,
     "resolucion": "Se solicitó al área de infraestructura el desbloqueo de la cuenta SAP. El acceso fue restablecido correctamente."
+  },
+  {
+    "id": 100006,
+    "titulo": "No puedo acceder al sistema de nuevo",
+    "descripcion": "Intento ingresar pero me saca al inicio.",
+    "sector": "TI",
+    "fechaSolicitud": "2024-06-18",
+    "estado": "ingresado",
+    "prioridad": "alta",
+    "usuarioId": 1002,
+    "trabajadorId": 2002
   }
 ]

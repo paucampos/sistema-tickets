@@ -6,7 +6,10 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "selenium:ver": "node selenium/ver-solicitudes.js",
+    "selenium:detalle": "node selenium/ver-detalle-solicitud.js",
+    "selenium:all": "node selenium/runner.js"
   },
   "private": true,
   "dependencies": {
@@ -16,8 +19,11 @@
     "@angular/forms": "^20.0.0",
     "@angular/platform-browser": "^20.0.0",
     "@angular/router": "^20.0.0",
+    "axios": "^1.10.0",
     "bootstrap": "^5.3.7",
+    "form-data": "^4.0.3",
     "rxjs": "~7.8.0",
+    "selenium-webdriver": "^4.33.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
   },
@@ -32,6 +38,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "npm-run-all": "^4.1.5",
     "typescript": "~5.8.2"
   }
 }
