@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
   login(): void {
     const ok = this.auth.loginPorNombre(this.nombreSeleccionado);
     if (ok) {
-      this.router.navigate(['/solicitudes']);
+      this.router.navigate(['/inicio']);
     } else {
       this.error = 'Usuario no válido';
     }

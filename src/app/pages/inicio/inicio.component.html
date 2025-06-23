@@ -1,0 +1,47 @@
+<div class="container mt-4 text-light">
+  <div class="row">
+    <!-- Bloque Izquierdo -->
+    <div class="col-md-3 mb-4">
+      <div class="card bg-warning text-dark text-center h-100">
+        <div class="card-body">
+          <h4 class="card-title"><i class="fa fa-person-circle"></i> Bienvenido!</h4>
+          <p class="fw-bold">{{ nombre }}</p>
+          <p>Faltan {{ diasParaCumple }} días para tu cumpleaños 🎉</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Noticias -->
+    <div class="col-md-6 mb-4">
+      <div class="card bg-light text-dark h-100">
+        <div class="card-header fw-bold text-center">Últimas noticias</div>
+        <ul class="list-group list-group-flush">
+          @for (n of noticias; track n.titulo) {
+            <li class="list-group-item">
+              {{ n.titulo }} junto al profesional {{ n.autor }}
+              <a [href]="n.link"> --> ver más</a>
+            </li>
+          }
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bloque Derecho -->
+    <div class="col-md-3 mb-4">
+      <div class="card bg-warning text-dark h-100">
+        <div class="card-body">
+          <h6 class="fw-bold">
+            <i class="fa-solid fa-calendar"></i> viernes</h6>
+          <p class="text-muted">Sin eventos para hoy</p>
+          <hr />
+          <p class="fw-bold">Próximos eventos:</p>
+          <ul class="ps-3">
+            @for (e of eventos; track e) {
+              <li>{{ e }}</li>
+            }
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
